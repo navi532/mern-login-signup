@@ -15,6 +15,15 @@ const dashboardList = asyncHandler(async (req,res) => {
         throw err;
     }
 
+    locationlist.sort((a,b) => {
+        if(a.deviceid == b.deviceid){
+            return a.timestamp - b.timestamp;
+        }
+        return a.deviceid > b.deviceid ? 1 : -1;
+    });
+    locationlist = [...new Map(locationlist.map(item =>
+        [item['deviceid'], item])).values()]
+
     res.status(200).json({message:"User Data",data:locationlist});
 });
 
