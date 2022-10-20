@@ -5,6 +5,8 @@ import { Route, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faAt, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -90,7 +92,9 @@ function Login() {
               placeholder='Enter your email'
               onChange={onChange}
             />
-            <i class="input-icon uil uil-at"></i>
+            {/* <i class="input-icon fa-at"></i> */}
+            
+            <FontAwesomeIcon className='input-icon' icon={faAt} />
           </div>
           <div className='form-group  mt-2'>
             <input
@@ -107,11 +111,11 @@ function Login() {
 
           <div className='form-group'>
             <button type='submit' className='btn mt-4'>
-              Submit
+              Login
             </button>
           </div>
-          <div onClick={createAccount}>
-          <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+          <div className='form-group' onClick={createAccount}>
+          <p class=""><a href="#0" class="link">Create your account?</a></p>
           </div>
         </form>
       </div>
