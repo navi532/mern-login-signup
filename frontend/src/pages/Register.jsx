@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faAt, faLocationPinLock, faLock, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -102,6 +104,7 @@ function Register() {
                                   placeholder="Enter your name"
                                   onChange={onChange}
                                 />
+                                <FontAwesomeIcon className='input-icon' icon={faAt} />
                               </div>
                               <div className="form-group">
                                 <input
@@ -113,6 +116,7 @@ function Register() {
                                   placeholder="Enter your email"
                                   onChange={onChange}
                                 />
+                                <FontAwesomeIcon className='input-icon' icon={faAt} />
                               </div>
                               <div className="form-group">
                                 <input
@@ -124,6 +128,7 @@ function Register() {
                                   placeholder="Enter password"
                                   onChange={onChange}
                                 />
+                                <FontAwesomeIcon className='input-icon' icon={faLock} />
                               </div>
                               <div className="form-group">
                                 <input
@@ -135,6 +140,7 @@ function Register() {
                                   placeholder="Confirm password"
                                   onChange={onChange}
                                 />
+                                <FontAwesomeIcon className='input-icon' icon={faLock} />
                               </div>
                               <div className="form-group mt-4">
                                 <button type="submit" className="btn">
