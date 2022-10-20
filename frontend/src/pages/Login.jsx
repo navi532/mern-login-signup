@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAt, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
+import {faAt, faLocationPinLock, faLock, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -106,7 +106,8 @@ function Login() {
               placeholder='Enter password'
               onChange={onChange}
             />
-            <i class="input-icon uil uil-lock-alt"></i>
+            {/* <i class="input-icon uil uil-lock-alt"></i> */}
+            <FontAwesomeIcon className='input-icon' icon={faLock} />
           </div>
 
           <div className='form-group'>
