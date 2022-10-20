@@ -66,12 +66,12 @@ export const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.user = action.payload.data
+        state.user = action.payload
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.message = action.payload.message
+        state.message = action.payload
         state.user = null
       })
       .addCase(login.pending, (state) => {
@@ -80,14 +80,14 @@ export const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.user = action.payload.data
+        state.user = action.payload
         // console.log(action)
         // setTimeout(()=>console.log('asd'),5000)
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
-        state.message = action.payload.message
+        state.message = action.payload
         state.user = null
       })
       .addCase(logout.fulfilled, (state) => {

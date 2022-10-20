@@ -49,7 +49,7 @@ function Dashboard() {
         {goals.length > 0 ? (
           <div className='goals'>
             {goals.map((goal) => (
-              <GoalItem key={goal.deviceid} goal={goal} />
+              <GoalItem key={goal.deviceid + goal.timestamp} goal={goal} />
             ))}
           </div>
         ) : (
