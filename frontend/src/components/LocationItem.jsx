@@ -2,11 +2,16 @@
 function LocationItem({ location }) {
   
   return (
-    <div className='location'>
-      <div>{new Date(location.timestamp).toLocaleString('en-US')}</div>
-      <h2>{location.deviceid}</h2>
-      <h2>{location.devicetype}</h2>
-      <h2>{location.location}</h2>
+    <div>
+      
+
+      <div className='location'>
+      <p className="location-id">{location.deviceid}</p>
+      <p className="location-type">{location.devicetype}</p>
+      <p className="location-timestamp">{new Date(location.timestamp).toLocaleString('en-US')}</p>
+      <p className="location-loc">{location.location}</p>
+      {/* <div class="line"></div> */}
+    </div>
     </div>
   )
 }

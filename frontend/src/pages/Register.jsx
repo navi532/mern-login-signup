@@ -62,21 +62,42 @@ function Register() {
     return <Spinner />
   }
 
+  
+  const loginAccount =()=>{
+    navigate('/login')
+  }
+  
   return (
     <>
-      <section className='heading'>
+      {/* <div className='section'>
+      <div className='container '>
+      <div className='justify-content-center'>
         <h1>
           <FaUser /> Register
         </h1>
-        <p>Please create an account</p>
-      </section>
+        <h1 >Please create an account</h1>
+      </div>
+      </div>
+      </div> */}
 
-      <section className='form'>
+    <div className='section'>
+      <div className='container'>
+        
+        <div className='row full-height justify-content-center'>
+         <div className='col-12 text-center align-self-center py-5'>
+          <div className='section pb-5 pt-5 pt-sm-2 text center'>
+            <div className='card-3d-wrap mx-auto'>
+              <div className='card-3d-wrapper'>
+                <div className='card-front'>
+                  <div className='center-wrap'>
+                    <div className='section text-center'>
+                    <h4 class="mb-4 pb-3">Sign Up</h4>
+                    <div className='form'>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <input
               type='text'
-              className='form-control'
+              className='form-style'
               id='name'
               name='name'
               value={name}
@@ -87,7 +108,7 @@ function Register() {
           <div className='form-group'>
             <input
               type='email'
-              className='form-control'
+              className='form-style mt-2'
               id='email'
               name='email'
               value={email}
@@ -98,7 +119,7 @@ function Register() {
           <div className='form-group'>
             <input
               type='password'
-              className='form-control'
+              className='form-style mt-2'
               id='password'
               name='password'
               value={password}
@@ -109,7 +130,7 @@ function Register() {
           <div className='form-group'>
             <input
               type='password'
-              className='form-control'
+              className='form-style mt-2'
               id='password2'
               name='password2'
               value={password2}
@@ -117,13 +138,26 @@ function Register() {
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
+          <div className='form-group mt-4'>
+            <button type='submit' className='btn'>
+              Sign Up
             </button>
           </div>
+          <div onClick={loginAccount}>
+          <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Already have an account?</a></p>
+          </div>
         </form>
-      </section>
+      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </>
   )
 }

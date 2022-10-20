@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import LocationItem from '../components/LocationItem'
 import Spinner from '../components/Spinner'
 import { getLocations } from '../features/locations/locationSlice'
-import {reset} from '../features/auth/authSlice'
+import {logout,reset} from '../features/auth/authSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -35,13 +35,26 @@ function Dashboard() {
     return <Spinner />
   }
 
+
+  // const { user } = useSelector((state) => state.auth)
+  const onLogout = () => {
+    dispatch(logout())
+    dispatch(reset())
+    navigate('/')
+  }
+
   return (
     <>
       <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
-        <p>GPS Dashboard</p>
+        <h2>GPS Dashboard</h2>
       </section>
-
+      <div className="location-details">
+      <p >Device Id</p>
+      <p >Device Type</p>
+      <p >Timestmap</p>
+      <p >Location</p>
+      </div>
       <section className='content'>
         {locations.length > 0 ? (
           <div className='locations'>
@@ -53,6 +66,10 @@ function Dashboard() {
           <h3>You don't have any location data</h3>
         )}
       </section>
+      <button className='btn' onClick={onLogout}>
+              {/* <FaSignOutAlt /> Logout */}
+              Logout
+            </button>
     </>
   )
 }
