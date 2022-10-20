@@ -51,15 +51,9 @@ function Dashboard() {
         Logout
       </button>
          </div>
-        <h1>GPS Dashboard</h1>
       </section>
-      {/* <div className="location-details">
-        <p>Device Id</p>
-        <p>Device Type</p>
-        <p>Timestmap</p>
-        <p>Location</p>
-      </div> */}
-      <section className="content">
+   
+      {/* <section className="content">
         {locations.length > 0 ? (
           <table className="locations">
             <thead>
@@ -70,7 +64,7 @@ function Dashboard() {
                 <th className='location-loc' scope="col">Location</th>
               </tr>
             </thead>
-            {/* <div className="line"></div>  */}
+            <div className="line"></div> 
             {locations.map((location) => (
               <LocationItem
                 key={location.deviceid + location.timestamp}
@@ -81,6 +75,36 @@ function Dashboard() {
         ) : (
           <h3>You don't have any location data</h3>
         )}
+      </section> */}
+
+      <section className="content">
+          <div className="container">
+              <h2 className="mb-5 text-light text-center">GPS Dashboard</h2>
+              <div className="table-responsive custom-table-responsive">
+
+                <table className="table custom-table">
+                  <thead>
+                    <tr>
+                      <th className="text-center" scope="col">Device ID</th>
+                      <th className="text-center" scope="col">Device Type</th>
+                      <th className="text-center" scope="col">Timestamp</th>
+                      <th className="text-center" scope="col">Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {
+                    locations.map((location) => (
+                      <LocationItem
+                        key={location.deviceid + location.timestamp}
+                        location={location}
+                      />
+                    ))
+                  }
+                  </tbody>
+                </table>
+              </div>
+          </div>
+
       </section>
       
     </>

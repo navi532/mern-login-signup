@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAt, faLocationPinLock, faLock, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
+import {faAt, faLock,faUser} from '@fortawesome/free-solid-svg-icons'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -70,22 +69,11 @@ function Register() {
 
   return (
     <>
-      {/* <div className='section'>
-      <div className='container '>
-      <div className='justify-content-center'>
-        <h1>
-          <FaUser /> Register
-        </h1>
-        <h1 >Please create an account</h1>
-      </div>
-      </div>
-      </div> */}
-
       <div className="section">
         <div className="container">
           <div className="row full-height justify-content-center">
-            <div className="col-12 text-center align-self-center py-5">
-              <div className="section pb-5 pt-5 pt-sm-2 text center">
+            <div className="col-12 text-center align-self-center">
+              <div className="section pb-5 pt-2 pt-sm-2 text center">
                 <div className="card-3d-wrap mx-auto">
                   <div className="card-3d-wrapper">
                     <div className="card-front">
@@ -104,12 +92,12 @@ function Register() {
                                   placeholder="Enter your name"
                                   onChange={onChange}
                                 />
-                                <FontAwesomeIcon className='input-icon' icon={faAt} />
+                                <FontAwesomeIcon className='input-icon' icon={faUser} />
                               </div>
                               <div className="form-group">
                                 <input
                                   type="email"
-                                  className="form-style mt-2"
+                                  className="form-style"
                                   id="email"
                                   name="email"
                                   value={email}
@@ -121,7 +109,7 @@ function Register() {
                               <div className="form-group">
                                 <input
                                   type="password"
-                                  className="form-style mt-2"
+                                  className="form-style"
                                   id="password"
                                   name="password"
                                   value={password}
@@ -133,7 +121,7 @@ function Register() {
                               <div className="form-group">
                                 <input
                                   type="password"
-                                  className="form-style mt-2"
+                                  className="form-style"
                                   id="password2"
                                   name="password2"
                                   value={password2}
@@ -142,18 +130,16 @@ function Register() {
                                 />
                                 <FontAwesomeIcon className='input-icon' icon={faLock} />
                               </div>
-                              <div className="form-group mt-4">
+                              <div className="form-group">
                                 <button type="submit" className="btn">
                                   Sign Up
                                 </button>
+                                <div className='form-group' onClick={loginAccount}>
+                                  <p ><a href=" " class="link">Already have an account?</a></p>
+                                </div>
+                                
                               </div>
-                              <div onClick={loginAccount}>
-                                <p class="mb-0 mt-4 text-center">
-                                  <a href="#0" class="link">
-                                    Already have an account?
-                                  </a>
-                                </p>
-                              </div>
+                              
                             </form>
                           </div>
                         </div>

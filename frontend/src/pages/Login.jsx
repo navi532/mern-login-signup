@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
-import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-import { Route, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAt, faLocationPinLock, faLock, faLongArrowUp} from '@fortawesome/free-solid-svg-icons'
+import {faAt, faLock} from '@fortawesome/free-solid-svg-icons'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -62,13 +61,6 @@ function Login() {
 
   return (
     <>
-      {/* <section className='heading'>
-        <h1>
-          <FaSignInAlt /> Login
-        </h1>
-        <p>Login and start setting locations</p>
-      </section> */}
-
       <div className='section'>
         <div className='container'>
           <div className='row full-height justify-content-center'>
@@ -92,7 +84,6 @@ function Login() {
               placeholder='Enter your email'
               onChange={onChange}
             />
-            {/* <i class="input-icon fa-at"></i> */}
             
             <FontAwesomeIcon className='input-icon' icon={faAt} />
           </div>
@@ -116,7 +107,7 @@ function Login() {
             </button>
           </div>
           <div className='form-group' onClick={createAccount}>
-          <p class=""><a href="#0" class="link">Create your account?</a></p>
+            <p ><a href=" " class="link">Create your account?</a></p>
           </div>
         </form>
       </div>
