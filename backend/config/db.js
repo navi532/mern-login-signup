@@ -5,7 +5,7 @@ const getDB = async () => {
   const conn = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Aeman&09",
+    password: "Naveen@532",
   });
 
   conn.connect((err) => {
